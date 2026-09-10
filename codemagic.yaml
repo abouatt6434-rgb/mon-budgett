@@ -1,0 +1,18 @@
+workflows:
+  mon-budget-android:
+    name: MON BUDGET - Build Android APK
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      java: 17
+    scripts:
+      - name: Récupérer les dépendances
+        script: flutter pub get
+      - name: Analyser le code
+        script: flutter analyze || true
+      - name: Lancer les tests
+        script: flutter test || true
+      - name: Compiler l'APK (release)
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
