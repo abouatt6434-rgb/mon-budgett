@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.monbudget.app"
-    compileSdk 34
+    compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -44,8 +44,8 @@ android {
         // Identifiant unique de l'application — à changer avant une
         // publication réelle sur Google Play (voir README).
         applicationId "com.monbudget.app"
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
