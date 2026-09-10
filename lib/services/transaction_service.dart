@@ -126,7 +126,7 @@ class TransactionService {
       startDate: start,
       endDate: end,
     );
-    return txs.fold(0.0, (sum, t) => sum + t.amount);
+    return txs.fold<double>(0.0, (sum, t) => sum + t.amount);
   }
 
   Future<double> getTotalExpense({DateTime? start, DateTime? end}) async {
@@ -135,7 +135,7 @@ class TransactionService {
       startDate: start,
       endDate: end,
     );
-    return txs.fold(0.0, (sum, t) => sum + t.amount);
+    return txs.fold<double>(0.0, (sum, t) => sum + t.amount);
   }
 
   Future<double> getBalance() async {
